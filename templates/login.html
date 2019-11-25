@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body_block %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Login here :</h1>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                {# A more "HTML" way of creating the login form#}
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="text" onfocus="this.value=''" name="email" placeholder="Email">
+                </p>
+                <p>
+                    <label for="password">Password:</label>
+                    <input type="password" onfocus="this.value=''" name="password" placeholder="Password">
+                </p>
+                <p><input type="submit" name="" value="Login"></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}
