@@ -17,8 +17,6 @@ class CsrfExemptSessionAuthentication(SessionAuthentication):
 
 
 class LoginAPIView(APIView):
-    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
-    permission_classes = (AllowAny,)
 
     def post(self, request, *args, **kwargs):
         email = request.data.get("email")
